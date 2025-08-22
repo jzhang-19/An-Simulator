@@ -16,7 +16,7 @@ public class AnhaneGUI implements ActionListener{
     private JButton button;
     private JButton delete;
     
-    //FIXME implement a loop to add all images.
+    
     private JLabel imageLabel;
     private ArrayList<ImageIcon> images;
     private int currIndex = 0;
@@ -86,3 +86,6 @@ public class AnhaneGUI implements ActionListener{
     }
     
 }
+
+
+
