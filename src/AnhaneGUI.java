@@ -1,9 +1,5 @@
 import java.util.*;
 import javax.swing.*;
-import java.util.List;
-import java.util.random.*;
-
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -71,7 +67,6 @@ public class AnhaneGUI implements ActionListener{
             int rand = random.nextInt(images.size());
 
             currIndex = rand;
-            //currIndex = images.size()-1; testing purposes
             imageLabel.setIcon(images.get(currIndex));
 
         }

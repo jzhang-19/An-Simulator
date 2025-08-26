@@ -3,17 +3,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.nio.file.Paths;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
 import java.io.File;
 
 public class AnhaneGUIManager {
-
+    
     private ArrayList<ImageIcon> privList;
     public AnhaneGUIManager(){
         privList = new ArrayList<ImageIcon>();
@@ -44,17 +40,16 @@ public class AnhaneGUIManager {
     }
 
     public ArrayList<ImageIcon> addAllImages(){
+        privList.clear();
+
         String folderPath = Paths.get("src","images").toString();
         File folder = new File(folderPath);
-        
-
         File[] files = folder.listFiles();
 
         if (files != null){
             for (File f: files){
                 if (f.isFile() && isImageFile(f.getName())){
-                    ImageIcon a = new ImageIcon(f.getAbsolutePath());
-                    privList.add(a);
+                    privList.add(new ImageIcon(f.getAbsolutePath()));
                 }
             }
         }
