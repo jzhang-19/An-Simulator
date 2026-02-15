@@ -47,10 +47,10 @@ public class AnhaneGUI implements ActionListener{
         
         //default setup
         frame.add(panel,BorderLayout.CENTER);
-        //frame.setSize(500,600);
+        frame.setSize(350,450);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("An Simulator");
-        frame.pack();
+        //frame.pack(); //sets the size of the frame to the smallest possible while showing all elements
         frame.setVisible(true);
 
     }
@@ -67,7 +67,7 @@ public class AnhaneGUI implements ActionListener{
             int rand = random.nextInt(images.size());
 
             currIndex = rand;
-            imageLabel.setIcon(images.get(currIndex));
+            imageLabel.setIcon(resizeImage(images.get(currIndex), 300, 300));
 
         }
         else if (e.getSource() == delete){
@@ -78,6 +78,12 @@ public class AnhaneGUI implements ActionListener{
         }
         
         
+    }
+
+    private ImageIcon resizeImage(ImageIcon icon, int width, int height) {
+        Image img = icon.getImage();
+        Image scaledImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaledImg);
     }
     
 }
